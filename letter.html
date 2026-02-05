@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>뚱뽀의 편지</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#fff1f6;
+      --bg2:#ffe4ef;
+      --paper:#ffffffd8;
+      --stroke:#f9a8d4;
+      --text:#3b2a3b;
+      --muted:#7b4b6a;
+      --accent:#f472b6;
+      --accent2:#fb7185;
+    }
+    *{box-sizing:border-box}
+    html, body{height:100%}
+    body{
+      margin:0;
+      font-family: "Gowun Dodum", ui-sans-serif, system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 15% 15%, #f472b62a 0%, transparent 55%),
+        radial-gradient(900px 700px at 85% 10%, #fb71852a 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      overflow:hidden;
+    }
+
+    .stage{
+      min-height:100%;
+      display:grid;
+      place-items:center;
+      padding:28px 16px;
+      position:relative;
+    }
+
+    .paper{
+      width:min(920px, 94vw);
+      border-radius:30px;
+      background: var(--paper);
+      border:1px solid #f9a8d480;
+      box-shadow: 0 22px 80px rgba(31, 12, 27, 0.18);
+      backdrop-filter: blur(10px);
+      padding: 26px;
+      animation: fadeIn .7s ease-out both;
+      position:relative;
+      overflow:hidden;
+    }
+    @keyframes fadeIn{
+      from{opacity:0; transform: translateY(10px) scale(.995)}
+      to{opacity:1; transform:none}
+    }
+
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom: 14px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #f9a8d4aa;
+      color:var(--muted);
+      font-size:13px;
+      box-shadow: 0 10px 25px rgba(251, 113, 133, 0.10);
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      color:var(--muted);
+      padding:10px 12px;
+      border-radius:16px;
+      border:1px solid #f9a8d4aa;
+      background:#ffffffb8;
+      transition: transform .12s ease, filter .12s ease;
+    }
+    .back:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+
+    h1{
+      margin: 10px 0 10px;
+      font-size: clamp(22px, 3.2vw, 34px);
+      letter-spacing:-.5px;
+    }
+
+    .letter{
+      border-radius:24px;
+      border:1px solid #f9a8d480;
+      background: #ffffffaa;
+      padding: 22px;
+      line-height:1.95;
+      font-size: clamp(14px, 1.9vw, 17px);
+      color: var(--text);
+      white-space: pre-wrap;
+    }
+
+    .footer{
+      margin-top:16px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:flex-end;
+      color: var(--muted);
+    }
+
+    .date{
+      font-family: "Great Vibes", cursive;
+      font-size: 28px;
+      color: var(--accent);
+      letter-spacing: .2px;
+    }
+
+    .sig{
+      text-align:right;
+    }
+    .sig .name{
+      font-family: "Great Vibes", cursive;
+      font-size: 36px;
+      color: var(--accent);
+      line-height:1;
+    }
+    .sig .small{
+      font-size:12px;
+      color:#8a5576;
+      margin-top:4px;
+    }
+
+    .copy{
+      margin-top:10px;
+      border:1px solid #f9a8d4aa;
+      background:#ffffffc8;
+      color:var(--muted);
+      padding:10px 12px;
+      border-radius:16px;
+      cursor:pointer;
+    }
+    .toast{
+      min-height:16px;
+      font-size:12px;
+      color:#8a5576;
+      margin-top:8px;
+    }
+
+    .corner{
+      position:absolute;
+      inset:-160px -160px auto auto;
+      width:360px; height:360px;
+      border-radius:999px;
+      background: radial-gradient(circle at 35% 35%, #f472b633, transparent 60%);
+      pointer-events:none;
+    }
+    .corner2{
+      position:absolute;
+      inset:auto auto -170px -170px;
+      width:390px; height:390px;
+      border-radius:999px;
+      background: radial-gradient(circle at 35% 35%, #fb718533, transparent 60%);
+      pointer-events:none;
+    }
+
+    /* 작은 장식 줄 */
+    .line{
+      height:1px;
+      background: linear-gradient(90deg, transparent, #f9a8d4aa, transparent);
+      margin: 12px 0 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="paper">
+      <div class="corner"></div>
+      <div class="corner2"></div>
+
+      <div class="top">
+        <span class="chip">💌 To: 현진 </span>
+        <a class="back" href="index.html">← 커버로</a>
+      </div>
+
+      <h1>뚱뽀의 정성</h1>
+      <div class="line"></div>
+
+      <div id="letter" class="letter">
+
+
+현진아 🐰
+
+2주년이라서, 내가 이걸 만들어봤어.!,.
+근데 잘 만들어지는건지 모르겠당.,. 쩜쩜 아니얌
+일단 이렇게 “뚱뽀 webpage”로 마음을 배송해본다…!
+
+자기는 바쁘다고 괜찮다고 하는데 얼마나 서운하고 할까 하는 마음이 있네,.!,
+정말정말 행복한 일이 가득하고 행운이 왔으면 좋겠는데 시간이 걸리나봐
+생각보다 내가 마음도 여유롭지 않고 좋은 일이 바로 있지 않아서 힘든가봐
+그만큼 잘 준비하고 많이 신경썼다고 생각하기도 하고 간절해서 더 그런 것 같아.
+면접 기회가 오고 한번의 행운이라도 찾아오면 정말 좋겠다 그치!!
+
+힘든것도 많고 떨어져 있어서 참 서운할 일도 많을 것 같은데
+내 옆에 있어줘서 정말 고마워 진심이야
+자기가 있어서 버틸 수 있어
+나도 항상 자기가 힘내고 잘 있을 수 있게 옆에 있을게
+        
+멀리 있어도,
+항상 같이 있자아.
+늘 고맙고, 사랑해.
+
+</div>
+
+      <div class="footer">
+        <div>
+          <div class="date">2026.02.08</div>
+          <button class="copy" id="copyBtn" type="button">뚱뽀의 마음 복사</button>
+          <div class="toast" id="toast"></div>
+        </div>
+
+        <div class="sig">
+          <div class="name">Seokmin Shin</div>
+          <div class="small">with love, always</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('copyBtn');
+    const toast = document.getElementById('toast');
+
+    btn.addEventListener('click', async () => {
+      const text = document.getElementById('letter').innerText;
+      try{
+        await navigator.clipboard.writeText(text);
+        toast.textContent = "복사뚱. 그대로 붙여넣뚱 🐰";
+      }catch(e){
+        toast.textContent = "안되면, 드래그해서 하라우!";
+      }
+      setTimeout(()=> toast.textContent = "", 2200);
+    });
+  </script>
+</body>
+</html>
